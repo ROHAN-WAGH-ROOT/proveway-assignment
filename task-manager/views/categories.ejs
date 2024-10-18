@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Categories</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Manage Categories</h1>
+    <form action="/categories" method="POST">
+        <label for="name">Category Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <button type="submit">Add Category</button>
+    </form>
+    <ul>
+        <% categories.forEach(category => { %>
+            <li>
+                <%= category.name %> 
+                <a href="/categories/<%= category._id %>/delete">Delete</a>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>
